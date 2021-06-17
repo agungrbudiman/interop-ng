@@ -1,0 +1,7 @@
+<?php
+	$_ENV['DB_HOST']       = "127.0.0.1";
+	$_ENV['DB_USERNAME'] 	= "root";
+	$_ENV['DB_PASSWORD'] 	= "";
+	$_ENV['DB_NAME'] 	= "sikap";
+	$_ENV['BASE_URL']   = 'http://localhost:8081/';
+?>
