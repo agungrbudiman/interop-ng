@@ -22,9 +22,9 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
                                     <?php 
-                                        require_once(__DIR__.'/lib/config.php');
-                                        if (isset($_GET['id'])) {
-                                            $id = $_GET['id'];
+                                        
+                                        if (isset($path[3])) {
+                                            $id = $path[3];
                                             $sql = "SELECT * FROM pegawai WHERE pe_id='$id'";
                                             $query = $conn->query($sql);
                                             $edit = $query->fetch(PDO::FETCH_OBJ);
@@ -47,7 +47,7 @@
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="pangkat">
                                                     <?php
-                                                        require_once(__DIR__.'/lib/config.php');
+                                                        
                                                         $sql = "SELECT*FROM pangkat";
                                                         $query = $conn->query($sql);
                                                         while ($data = $query->fetch(PDO::FETCH_OBJ)) {
@@ -268,19 +268,19 @@
                 $("#provinsi").change(function () 
                 {
                     var id_prov = $(this).val();
-                    $.ajax({url: "alamat.php?id_prov="+id_prov}).done(function(data){$("#kabupaten").html(data); $("#kabupaten").trigger("change")});
+                    $.ajax({url: "alamat/?id_prov="+id_prov}).done(function(data){$("#kabupaten").html(data); $("#kabupaten").trigger("change")});
                 });
 
                 $("#kabupaten").change(function () 
                 {
                     var id_kabupaten = $(this).val();
-                    $.ajax({url: "alamat.php?id_kabupaten="+id_kabupaten}).done(function(data){$("#kecamatan").html(data); $("#kecamatan").trigger("change")});
+                    $.ajax({url: "alamat/?id_kabupaten="+id_kabupaten}).done(function(data){$("#kecamatan").html(data); $("#kecamatan").trigger("change")});
                 });
 
                 $("#kecamatan").change(function () 
                 {
                     var id_kec = $(this).val();
-                    $.ajax({url: "alamat.php?id_kec="+id_kec}).done(function(data){$("#kelurahan").html(data);});
+                    $.ajax({url: "alamat/?id_kec="+id_kec}).done(function(data){$("#kelurahan").html(data);});
                 });
             });
 

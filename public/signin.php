@@ -11,8 +11,8 @@
         <div class="new-login-box">
             <div class="white-box">
                 <?php
-                    if (isset($paths[3])) {
-                        $msg = $paths[3];
+                    if (isset($path[3])) {
+                        $msg = $path[3];
                         if ($msg == 'warning') {
                             echo "<div class='alert alert-primary'>
                                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -34,8 +34,8 @@
                     }
                 ?>
                 <br>
-                <h3 class="box-title m-b-0"><?php echo $apps[$paths[1]]?></h3>
-                <form class="form-horizontal new-lg-form" id="loginform" method="post" action="<?php echo $_ENV['BASE_URL'] . $paths[1] . '/signin-check'?>">
+                <h3 class="box-title m-b-0"><?php echo $appname[$path[1]]?></h3>
+                <form class="form-horizontal new-lg-form" id="loginform" method="post" action="signin-check">
                     <div class="form-group m-t-20">
                         <div class="col-xs-12">
                             <label>Username</label>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <a href="<?php echo $_ENV['BASE_URL'] . $paths[1] . '/forgot' ?>" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot password?</a> </div>
+                            <a href="forgot" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot password?</a> </div>
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">

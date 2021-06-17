@@ -13,16 +13,16 @@
   {
     //buat session dengan nama username dengan isi nama user yang login
     $data = $query->fetch(PDO::FETCH_OBJ);
-    $_SESSION['id'] = $data->us_id;
-    $_SESSION['us_username'] = $data->us_username;
-    $_SESSION['us_email'] = $data->us_email;
+    $_SESSION[$path[1] . 'id'] = $data->us_id;
+    $_SESSION[$path[1] . 'us_username'] = $data->us_username;
+    $_SESSION[$path[1] . 'us_email'] = $data->us_email;
     //redirect ke halaman index
-    header('location: ' . $_ENV['BASE_URL'] . $paths[1] . '/');
+    header('location: ' . $_ENV['BASE_URL'] . $path[1] . '/');
   } 
   else 
   {
     $id = 'failed';
     //redirect ke halaman signin
-    header('location: ' . $_ENV['BASE_URL'] . $paths[1] . '/signin/' . $id);
+    header('location: ' . $_ENV['BASE_URL'] . $path[1] . '/signin/' . $id);
   }
 ?>

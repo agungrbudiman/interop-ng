@@ -2,9 +2,9 @@
         <!-- Page Content -->
         <!-- ============================================================== -->
         <?php 
-            require_once(__DIR__.'/lib/config.php');
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
+            
+            if (isset($path[3])) {
+                $id = $path[3];
                 $sql = "SELECT * FROM riwayat_pendidikan WHERE rp_id='$id'";
                 $query = $conn->query($sql);
                 $edit = $query->fetch(PDO::FETCH_OBJ);

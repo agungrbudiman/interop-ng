@@ -17,7 +17,6 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php 
-                            require_once(__DIR__.'/lib/config.php');
                             if (isset($_POST['add'])) {
                                 $nama = $_POST['nama'];
                                 $nip = $_POST['nip'];
@@ -54,8 +53,8 @@
                                     </div>";
                                 }
                             }
-                            elseif (isset($_GET['id'])) {
-                                $id = $_GET['id'];
+                            elseif (isset($path[3])) {
+                                $id = $path[3];
                                 $sql = "DELETE FROM pegawai WHERE pe_id='$id'";
                                 $query = $conn->query($sql);
                                 if ($query) {

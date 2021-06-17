@@ -18,9 +18,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php 
-                            require_once(__DIR__.'/lib/config.php');
-                            if (isset($_GET['id'])) {
-                                $id = $_GET['id'];
+                            
+                            if (isset($path[3])) {
+                                $id = $path[3];
                                 $peg_sql = "SELECT * FROM pegawai JOIN pangkat USING(pa_id) WHERE pe_id='$id'";
                                 $peg_query = $conn->query($peg_sql);
                                 $peg = $peg_query->fetch(PDO::FETCH_OBJ);

@@ -10,7 +10,7 @@
         </div>
         <div class="new-login-box">
             <div class="white-box">
-                <form class="form-horizontal new-lg-form" id="loginform" action="<?php echo $_ENV['BASE_URL'] . $paths[1] . '/forgot'?>" method="post">
+                <form class="form-horizontal new-lg-form" id="loginform" action="forgot" method="post">
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <h3>Recover Password</h3>

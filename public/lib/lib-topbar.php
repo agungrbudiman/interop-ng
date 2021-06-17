@@ -4,9 +4,9 @@
                     <!-- Logo -->
                     <a class="logo" href="index">
                         <!-- Logo icon image, you can use font-icon also --><b>
-                        <!--This is light logo icon--><img src="images/<?php echo $paths[1]?>-lg.png" alt="home" class="light-logo" style="max-height: 31px;" /></b>
+                        <!--This is light logo icon--><img src="./../images/<?php echo $path[1]?>-lg.png" alt="home" class="light-logo" style="max-height: 31px;" /></b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is light logo text--><img src="images/<?php echo $paths[1]?>-tx.png" alt="home" class="light-logo" style="max-height: 15px;" /></span> 
+                        <!--This is light logo text--><img src="./../images/<?php echo $path[1]?>-tx.png" alt="home" class="light-logo" style="max-height: 15px;" /></span> 
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -15,15 +15,15 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="images/user/<?php echo $_SESSION['us_username']?>.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $_SESSION['us_username']?> </b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="./../images/user/<?php echo $_SESSION[$path[1] . 'us_username']?>.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $_SESSION[$path[1] . 'us_username']?> </b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="images/user/<?php echo $_SESSION['us_username']?>.png" alt="user" /></div>
+                                    <div class="u-img"><img src="./../images/user/<?php echo $_SESSION[$path[1] . 'us_username']?>.png" alt="user" /></div>
                                     <div class="u-text">
-                                        <h4><?php echo $_SESSION['us_username']?></h4>
-                                        <p class="text-muted" style="font-size: 12px;"><?php echo $_SESSION['us_email']?></p>
-                                        <a href="<?php echo $_ENV['BASE_URL'] . $paths[1] . '/signout'?>" class="btn btn-rounded btn-danger btn-sm"><i class="fa fa-power-off"></i> &nbsp;Sign Out</a>
+                                        <h4><?php echo $_SESSION[$path[1] . 'us_username']?></h4>
+                                        <p class="text-muted" style="font-size: 12px;"><?php echo $_SESSION[$path[1] . 'us_email']?></p>
+                                        <a href="signout" class="btn btn-rounded btn-danger btn-sm"><i class="fa fa-power-off"></i> &nbsp;Sign Out</a>
                                     </div>
                                 </div>
                             </li>

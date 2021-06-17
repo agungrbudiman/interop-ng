@@ -5,5 +5,6 @@ $menus = array(
     "cuti"=>"Cuti",
     "laporan"=>"Laporan",
 );
-$menukey = array('kehadiran', 'izin', 'cuti', 'laporan');
+$files = array('kehadiran', 'izin', 'cuti', 'laporan', 'izin-add', 'cuti-add');
+$direct = array('api');
 ?>

@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li><a href="index">Home</a></li>
                             <li><a href="data">Data Pegawai</a></li>
-                            <li><a href="jabatan/<?php echo $_GET['id'];?>">Riwayat Jabatan</a></li>
+                            <li><a href="jabatan/<?php echo $path[3];?>">Riwayat Jabatan</a></li>
                             <li class="active">Add Riwayat Jabatan</li>
                         </ol>
                     </div>
@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
                                     <form method="post" action="jabatan">
-                                        <input type="hidden" name="pe_id" value="<?php echo $_GET['id'];?>">
+                                        <input type="hidden" name="pe_id" value="<?php echo $path[3];?>">
                                         <div class="form-group">
                                             <label class="col-sm-3">Jenis Instansi</label>
                                             <label class="radio-inline col-sm-2"><input type="radio" name="jenis-instansi" value="Internal">Internal</label>
@@ -35,7 +35,7 @@
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="eselon">
                                                    <?php
-                                                        require_once(__DIR__.'/lib/config.php');
+                                                        
                                                         $sql = "SELECT*FROM pangkat";
                                                         $query = $conn->query($sql);
                                                         while ($data = $query->fetch(PDO::FETCH_OBJ)) {
@@ -106,7 +106,7 @@
                                             <br><br>
                                         </div>
                                         <button type="submit" name="add" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
-                                        <a href="jabatan/<?php echo $_GET['id'];?>" class="btn btn-default waves-effect waves-light">Cancel</a>
+                                        <a href="jabatan/<?php echo $path[3];?>" class="btn btn-default waves-effect waves-light">Cancel</a>
                                     </form>
                                 </div>
                             </div>

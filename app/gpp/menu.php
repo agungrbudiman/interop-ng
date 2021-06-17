@@ -1,4 +1,5 @@
 <?php
 $menus = array();
-$menukey = array();
+$files = array();
+$direct = array();
 ?>

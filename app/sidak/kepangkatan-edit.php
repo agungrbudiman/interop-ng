@@ -2,9 +2,9 @@
         <!-- Page Content -->
         <!-- ============================================================== -->
         <?php 
-            require_once(__DIR__.'/lib/config.php');
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
+            
+            if (isset($path[3])) {
+                $id = $path[3];
                 $sql = "SELECT * FROM kepangkatan WHERE kp_id='$id'";
                 $query = $conn->query($sql);
                 $edit = $query->fetch(PDO::FETCH_OBJ);
@@ -102,7 +102,7 @@
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="golongan">
                                                     <?php
-                                                        require_once(__DIR__.'/lib/config.php');
+                                                        
                                                         $sql = "SELECT*FROM pangkat";
                                                         $query = $conn->query($sql);
                                                         while ($data = $query->fetch(PDO::FETCH_OBJ)) {

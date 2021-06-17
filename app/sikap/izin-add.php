@@ -41,7 +41,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="index">Home</a></li>
+                    <li><a href=".">Home</a></li>
                     <li><a href="izin">Izin</a></li>
                     <li class="active">Pengajuan Izin</li>
                 </ol>

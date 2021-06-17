@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php 
-                            require_once(__DIR__.'/lib/config.php');
+                            
                             if (isset($_SESSION['id'])) {
                                 $id = $_SESSION['id'];
                                 $sess_sql = "SELECT us_email FROM user WHERE us_id=$id";
