@@ -6,6 +6,5 @@
 	$_ENV['DB_NAME_SIDAK'] 	= "sidak";
 	$_ENV['DB_NAME_GPP'] 	= "sidak";
 	$_ENV['DB_NAME_SAS'] 	= "sidak";
-	$_ENV['BASE_URL']   = 'http://localhost/interop-ng/';
-	$_ENV['BASE_URL_OFFSET'] = 1;
+	$_ENV['BASE_URL']   = 'http://localhost:8081/';
 ?>
