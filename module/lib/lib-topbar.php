@@ -15,11 +15,11 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="./../images/user/<?php echo $_SESSION[$path[1] . 'us_username']?>.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $_SESSION[$path[1] . 'us_username']?> </b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="./../images/user/admin.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php echo $_SESSION[$path[1] . 'us_username']?> </b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="./../images/user/<?php echo $_SESSION[$path[1] . 'us_username']?>.png" alt="user" /></div>
+                                    <!-- <div class="u-img"><img src="./../images/user/<?php //echo $_SESSION[$path[1] . 'us_username']?>.png" alt="user" /></div> -->
                                     <div class="u-text">
                                         <h4><?php echo $_SESSION[$path[1] . 'us_username']?></h4>
                                         <p class="text-muted" style="font-size: 12px;"><?php echo $_SESSION[$path[1] . 'us_email']?></p>

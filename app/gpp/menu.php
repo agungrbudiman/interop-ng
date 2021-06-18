@@ -1,5 +1,4 @@
 <?php
 $menus = array();
-$files = array();
-$direct = array();
+$menusPegawai = array();
 ?>

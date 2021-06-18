@@ -1,7 +1,9 @@
 <?php
 $menus = array(
     "data"=>"Data Pegawai",
-    "perubahan"=>"Ajukan Perubahan",
+);
+$menusPegawai = array(
+    "perubahan"=>"Ajukan Perubahan"
 );
 $files = array(
     'data', 'data-add', 'data-edit', 

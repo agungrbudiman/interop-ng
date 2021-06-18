@@ -35,7 +35,7 @@
 </html>
 
 <?php
-    if (isset($_POST['reset'])) {
+    if (isset($_POST[''])) {
         include "phpmailer/classes/class.phpmailer.php";
         //define(LIB_DIR, './lib/');
         //require_once(LIB_DIR . 'config.php');

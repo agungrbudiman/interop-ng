@@ -5,4 +5,5 @@ $menus = array(
     "cuti"=>"Cuti",
     "laporan"=>"Laporan",
 );
+$menusPegawai = array();
 ?>

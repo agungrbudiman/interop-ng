@@ -16,17 +16,12 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <?php 
-                            
-                            if (isset($_SESSION['id'])) {
-                                $id = $_SESSION['id'];
-                                $sess_sql = "SELECT us_email FROM user WHERE us_id=$id";
-                                $sess_query = $conn->query($sess_sql);
-                                $sess = $sess_query->fetch(PDO::FETCH_OBJ);
-                                $peg_sql = "SELECT * FROM pegawai JOIN pangkat USING(pa_id) WHERE pe_email='$sess->us_email'";
-                                $peg_query = $conn->query($peg_sql);
-                                $peg = $peg_query->fetch(PDO::FETCH_OBJ);
-                            }
+                        <?php                           
+                            $id = $_SESSION[$path[1] . 'id'];
+                            $peg_sql = "SELECT * FROM pegawai JOIN pangkat USING(pa_id) WHERE pe_id=".$id;
+                            $peg_query = $conn->query($peg_sql);
+                            $peg = $peg_query->fetch(PDO::FETCH_OBJ);
+                            // print_r($peg);
                         ?>
                     </div>
                 </div>
@@ -58,7 +53,7 @@
                         <div class="white-box analytics-info red-info">
                             <h3 class="box-title">Data Pegawai</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li><a href="<?php echo 'data-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,8 +61,8 @@
                         <div class="white-box analytics-info yellow-info">
                             <h3 class="box-title">Riwayat Kepangakatan</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
-                                <li class="text-right"><a href="" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
+                                <li><a href="<?php echo 'kepangkatan-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li class="text-right"><a href="<?php echo 'kepangkatan-add/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,8 +70,8 @@
                         <div class="white-box analytics-info green-info">
                             <h3 class="box-title">Riwayat Jabatan</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
-                                <li class="text-right"><a href="" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
+                                <li><a href="<?php echo 'jataban-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li class="text-right"><a href="<?php echo 'jabatan-add/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
                             </ul>
                         </div>
                     </div>
@@ -86,8 +81,8 @@
                         <div class="white-box analytics-info blue-info">
                             <h3 class="box-title">Riwayat Pendidikan</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
-                                <li class="text-right"><a href="" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
+                                <li><a href="<?php echo 'pendidikan-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li class="text-right"><a href="<?php echo 'pendidikan-add/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
                             </ul>
                         </div>
                     </div>
@@ -95,8 +90,8 @@
                         <div class="white-box analytics-info purple-info">
                             <h3 class="box-title">Data Keluarga</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
-                                <li class="text-right"><a href="" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
+                                <li><a href="<?php echo 'keluarga-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li class="text-right"><a href="<?php echo 'keluarga-add/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
                             </ul>
                         </div>
                     </div>
