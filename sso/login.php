@@ -1,6 +1,6 @@
+<?php $callback_url = isset($_GET['callback_url']) ? $_GET['callback_url'] : $_ENV['BASE_URL']?>
 <p class="login-box-msg">Sign in to start your session</p>
-<form id="formlogin" action="#" method="post">
-  <input type="text" name="callback_url" value="<?php echo $callback_url ?>" hidden>
+<form id="formlogin" action="?callback_url=<?php echo $callback_url?>" method="post">
   <?php if (isset($_GET['failed'])) { ?>
     <div id="alertlogin" class="alert alert-danger alert-dismissible" role="alert">
       Login failed!
