@@ -1,6 +1,26 @@
 <?php
+  require_once __DIR__ . '/../vendor/autoload.php';
+  use Firebase\JWT\JWT;
   session_start();
   
+  if (isset($_GET["token"])) {
+    $token = $_GET["token"];
+    try {
+        $decoded = JWT::decode($token, $_ENV['SSO_KEY'], array('HS256'));
+        $_SESSION[$path[1] . 'id'] = $decoded->us_id;
+        $_SESSION[$path[1] . 'us_username'] = $decoded->us_username;
+        $_SESSION[$path[1] . 'us_email'] = $decoded->us_email;
+        header('location: ' . $_ENV['BASE_URL'] . $path[1] . '/');
+        exit();
+    }
+    catch (Firebase\JWT\SignatureInvalidException $e) {
+      
+    }
+    catch (Firebase\JWT\ExpiredException $e){
+
+    }
+  }
+
   require_once(__DIR__.'/lib/lib-db.php');
 
   $username = $_POST['username'];

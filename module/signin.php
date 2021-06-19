@@ -53,8 +53,11 @@
                             <a href="forgot" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot password?</a> </div>
                     </div>
                     <div class="form-group text-center m-t-20">
-                        <div class="col-xs-12">
+                        <div class="col-xs-6">
                             <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit" name="signin">Sign In</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="<?php echo $_ENV['SSO_URL'] . '?callback_url=' . $_ENV['BASE_URL'] . $path[1] . '/signin-check/'?>"><button class="btn btn-danger btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="button" name="sso">SSO</button></a>
                         </div>
                     </div>
                 </form>
