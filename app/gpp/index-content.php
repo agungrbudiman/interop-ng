@@ -15,7 +15,7 @@
                     <div class="col-md-4">
                         <div class="white-box"> 
                             <h3>DATA PEGAWAI</h3>
-                            <p>Perubahan Data : 3</p>
+                            <p>Perubahan Data : 0</p>
                             <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-user"></i></button> 
                         </div>
                     </div>
@@ -38,15 +38,22 @@
                     <div class="col-md-4">
                         <div class="white-box"> 
                             <h3>RIWAYAT PENDIDIKAN</h3>
-                            <p>Perubahan Data : 1</p>
+                            <p>Perubahan Data : 0</p>
                             <button type="button" class="btn btn-info btn-circle"><i class="fa fa-graduation-cap"></i></button> 
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="white-box"> 
                             <h3>DATA KELUARGA</h3>
-                            <p>Perubahan Data : 2</p>
+                            <p>Perubahan Data : 0</p>
                             <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-users"></i></button> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="white-box"> 
+                            <h3>INBOX</h3>
+                            <p>Perubahan Data : <?php echo $conn->query("SELECT * FROM notifikasi")->rowCount()?></p>
+                            <a href="inbox"><button type="button" class="btn btn-primary btn-circle"><i class="fa fa-inbox"></i></button></a>
                         </div>
                     </div>
                 </div>
