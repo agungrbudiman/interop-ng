@@ -28,8 +28,10 @@
 
   $sqluser = "SELECT * FROM user WHERE us_username='$username' and us_password='$password'";
   $sqlpegawai = "SELECT * FROM pegawai WHERE pe_email='$username' and pe_no_hp='$password'";
-  $checkuser = $conn->query($sqluser)->rowCount();
-  $checkpegawai = $conn->query($sqlpegawai)->rowCount();
+  try {
+    $checkuser = $conn->query($sqluser)->rowCount();
+    $checkpegawai = $conn->query($sqlpegawai)->rowCount();
+  } catch (Exception $e) {}
   if ($checkuser > 0) 
   {
     //buat session dengan nama username dengan isi nama user yang login

@@ -5,8 +5,11 @@ $path = array_slice($path, $offset-2);
 // print_r($path);
 
 // app doesn't exist
-if ($path[1] == '' || ( isset($path[1]) && !file_exists(__DIR__ . '/../../app/' . $path[1] . '/'))) {
-    echo "app not found";
+if ($path[1] == '' || ( isset($path[1]) && !in_array($path[1], array_keys($appname)))) {
+    foreach ($appname as $url=>$value) { ?>
+        <a href="<?php echo $url?>"><?php echo $value?></a>
+        <br>
+    <?php }
     exit();
 }
 $rootdir = __DIR__ . '/../../app/' . $path[1] . '/';
@@ -19,22 +22,22 @@ if (isset($path[2]) && file_exists(__DIR__ . '/../' . $path[2] . '.php')) {
 }
 
 require_once __DIR__ . '/lib-db.php';
-require_once __DIR__ . "/lib-session.php";
 
-// app module in module folder (without page)
+// app module in module folder (without index base)
 if (isset ($path[2]) && file_exists($rootdir . '/module/' . $path[2] . '.php')) {
     include_once $rootdir . '/module/' . $path[2] . '.php';
     exit();
 }
 
+require_once __DIR__ . "/lib-session.php";
 require_once __DIR__ . "/../index-base.php";
 
-// app module in root (with page)
+// app module in root (with index base)
 if (isset ($path[2]) && file_exists($rootdir . $path[2] . '.php')) {
     include_once $rootdir . $path[2] . '.php';
 }
 // app default page (index-content.php)
-else if (isset ($path[2]) && file_exists($rootdir .'index-content.php')){
+else if (file_exists($rootdir .'index-content.php')){
     include_once $rootdir . 'index-content.php';
 }
 // shared default page

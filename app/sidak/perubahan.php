@@ -70,7 +70,7 @@
                         <div class="white-box analytics-info green-info">
                             <h3 class="box-title">Riwayat Jabatan</h3>
                             <ul class="list-inline two-part">
-                                <li><a href="<?php echo 'jataban-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
+                                <li><a href="<?php echo 'jabatan-edit/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Ubah Data</a></li>
                                 <li class="text-right"><a href="<?php echo 'jabatan-add/' . $id ?>" class="btn btn-rounded btn-outline btn-default">Tambah Data</a></li>
                             </ul>
                         </div>

@@ -18,31 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gpp`
+-- Database: `sas`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `notifikasi`
---
-
-CREATE TABLE `notifikasi` (
-  `id` int(11) NOT NULL,
-  `kategori` varchar(10) NOT NULL,
-  `nip` varchar(50) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL,
-  `status` varchar(10) NOT NULL DEFAULT 'undefined'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `notifikasi`
---
-
-INSERT INTO `notifikasi` (`id`, `kategori`, `nip`, `nama`, `keterangan`, `status`) VALUES
-(1, 'pangkat', '2101234567890000001', 'Agung Bahtiar, S.H., M.H.', 'Kenaikan pangkat menjadi golongan IV E', 'rejected'),
-(2, 'jabatan', '2101234567890000005', 'Kurnia Ekawati, S.E., M.Si.', 'Kenaikan jabatan menjadi kepala bagian', 'approved');
 
 -- --------------------------------------------------------
 
@@ -71,12 +48,6 @@ INSERT INTO `user` (`us_id`, `ac_id`, `us_username`, `us_password`, `us_photo`, 
 --
 
 --
--- Indexes for table `notifikasi`
---
-ALTER TABLE `notifikasi`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -86,12 +57,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `notifikasi`
---
-ALTER TABLE `notifikasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
