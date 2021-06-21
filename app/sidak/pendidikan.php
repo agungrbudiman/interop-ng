@@ -46,11 +46,13 @@
                                     $sql = "INSERT INTO riwayat_pendidikan VALUES (0, '$pe_id', '$tp_id', '$rp_negara', '$rp_sekolah', '$rp_tahun_lulus', '$rp_no_ijazah', '$rp_jurusan', '$rp_bidang', '$rp_gelar', '$rp_bkn')";
                                     $query = $conn->query($sql);
                                     if ($query) {
-                                        echo "
+                                        echo <<<HTML
                                         <div class='alert alert-success'>
                                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                                            <strong>Success!</strong> Data is successfully added.
-                                        </div>";
+                                            <strong>Success!</strong> Data is successfully added.<br>
+                                            Pengajuan anda telah diterima, silahkan <a href="../../nota-dinas.pdf">unduh</a> nota dinas.
+                                        </div>
+                                        HTML;
                                         http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=pendidikan&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan data pendidikan');
                                     }
                                     else{

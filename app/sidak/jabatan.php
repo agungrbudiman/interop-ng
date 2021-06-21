@@ -50,11 +50,13 @@
                                     $sql = "INSERT INTO jabatan VALUES (0, '$pe_id', '$jb_jenis_instansi', '$pa_id', '$jb_nama_jabatan', '$jb_nama_unit', '$jb_status_jabatan', '$jb_tmt_golongan', '$jb_no_sk_pengangkatan', '$jb_tanggal_sk_pengangkatan', '$jb_tmt_pengangkatan', '$jb_aktif_jabatan', '$jb_no_sk_pemberhentian', '$jb_tanggal_sk_pemberhentian', '$jb_tmt_pemberhentian')";
                                     $query = $conn->query($sql);
                                     if ($query) {
-                                        echo "
+                                        echo <<<HTML
                                         <div class='alert alert-success'>
                                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                                            <strong>Success!</strong> Data is successfully added.
-                                        </div>";
+                                            <strong>Success!</strong> Data is successfully added.<br>
+                                            Pengajuan anda telah diterima, silahkan <a href="../../nota-dinas.pdf">unduh</a> nota dinas.
+                                        </div>
+                                        HTML;
                                         http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=jabatan&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan data jabatan');
                                     }
                                     else{
