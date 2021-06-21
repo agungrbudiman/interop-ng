@@ -36,7 +36,7 @@
                                 $alamat = $_POST['alamat'];
                                 $hobi = $_POST['hobi'];
 
-                                $sql = "INSERT INTO pegawai VALUES('','$nama','$nip','$pangkat','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$status','$no_hp','$email','$no_bpjs','$provinsi','$kabupaten','$kecamatan','$kelurahan','$alamat','$hobi')";
+                                $sql = "INSERT INTO pegawai VALUES(0,'$nama','$nip','$pangkat','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$status','$no_hp','$email','$no_bpjs','$provinsi','$kabupaten','$kecamatan','$kelurahan','$alamat','$hobi')";
                                 $query = $conn->query($sql);
                                 if ($query) {
                                     echo "
@@ -44,6 +44,7 @@
                                         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                                         <strong>Success!</strong> Data is successfully added.
                                     </div>";
+                                    http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=pegawai&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan data pegawai');
                                 }
                                 else{
                                     echo "

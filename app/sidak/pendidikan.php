@@ -43,7 +43,7 @@
                                     $rp_gelar = $_POST['gelar'];
                                     $rp_bkn = $_POST['bkn'];
 
-                                    $sql = "INSERT INTO riwayat_pendidikan VALUES ('', '$pe_id', '$tp_id', '$rp_negara', '$rp_sekolah', '$rp_tahun_lulus', '$rp_no_ijazah', '$rp_jurusan', '$rp_bidang', '$rp_gelar', '$rp_bkn')";
+                                    $sql = "INSERT INTO riwayat_pendidikan VALUES (0, '$pe_id', '$tp_id', '$rp_negara', '$rp_sekolah', '$rp_tahun_lulus', '$rp_no_ijazah', '$rp_jurusan', '$rp_bidang', '$rp_gelar', '$rp_bkn')";
                                     $query = $conn->query($sql);
                                     if ($query) {
                                         echo "
@@ -51,6 +51,7 @@
                                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                                             <strong>Success!</strong> Data is successfully added.
                                         </div>";
+                                        http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=pendidikan&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan data pendidikan');
                                     }
                                     else{
                                         echo "

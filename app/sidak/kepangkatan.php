@@ -46,7 +46,7 @@
                                     $kp_tanggal_bkn = $_POST['tanggal-bkn'];
                                     $kp_gaji = $_POST['gaji'];
 
-                                    $sql = "INSERT INTO kepangkatan VALUES ('', '$pe_id', '$jp_id', '$kp_no_sk', '$kp_oleh', '$kp_tanggal_sk', '$tp_id', '$pa_id', '$kp_tmt_golongan', '$kp_tahun_masa_kerja', '$kp_bulan_masa_kerja', '$kp_no_bkn', '$kp_tanggal_bkn', '$kp_gaji')";
+                                    $sql = "INSERT INTO kepangkatan VALUES (0, '$pe_id', '$jp_id', '$kp_no_sk', '$kp_oleh', '$kp_tanggal_sk', '$tp_id', '$pa_id', '$kp_tmt_golongan', '$kp_tahun_masa_kerja', '$kp_bulan_masa_kerja', '$kp_no_bkn', '$kp_tanggal_bkn', '$kp_gaji')";
                                     $query = $conn->query($sql);
                                     if ($query) {
                                         echo "
@@ -54,6 +54,7 @@
                                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                                             <strong>Success!</strong> Data is successfully added.
                                         </div>";
+                                        http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=pangkat&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan data pangkat');
                                     }
                                     else{
                                         echo "

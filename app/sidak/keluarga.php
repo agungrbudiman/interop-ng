@@ -40,7 +40,7 @@
                                     $ke_tunjangan = $_POST['tunjangan'];
                                     
 
-                                    $sql = "INSERT INTO keluarga VALUES('', '$id', '$ke_nama', '$ta_id', '$ke_jenis_kelamin', '$ke_tanggal_lahir', '$ke_tanggal_menikah', '$ke_tunjangan')";
+                                    $sql = "INSERT INTO keluarga VALUES(0, '$id', '$ke_nama', '$ta_id', '$ke_jenis_kelamin', '$ke_tanggal_lahir', '$ke_tanggal_menikah', '$ke_tunjangan')";
                                     $query = $conn->query($sql);
                                     if ($query) {
                                         echo "
@@ -48,6 +48,7 @@
                                             <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
                                             <strong>Success!</strong> Data is successfully added.
                                         </div>";
+                                        http_request($_ENV['BASE_URL'] . 'gpp/api/?kategori=keluarga&nip=' . $peg->pe_nip . '&nama=' . $peg->pe_nama . '&keterangan=Penambahan anggota keluarga');
                                     }
                                     else{
                                         echo "
