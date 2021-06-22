@@ -1,7 +1,4 @@
 <?php
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
 if (isset($_GET['logout'])) {
   require_once __DIR__ . '/logout.php';
   exit();
