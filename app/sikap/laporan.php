@@ -68,6 +68,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="http://localhost:8000/api/laporan/export"><strong>Unduh Laporan</strong></a>
                         </div>
                     </div>
                 </div>
